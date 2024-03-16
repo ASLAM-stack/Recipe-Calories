@@ -42,7 +42,7 @@ const Header = () => {
                   <div class="form-control">
                     <input
                       type="text"
-                      placeholder="🔎Search"
+                      placeholder="🔍Search"
                       class="input input-bordered w-full rounded-full"
                     />
                   </div>
