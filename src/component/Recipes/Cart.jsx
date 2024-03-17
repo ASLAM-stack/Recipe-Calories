@@ -1,15 +1,19 @@
 import Row from "./Row";
-
-const Cart = ({ cart,handleDelte }) => {
+import Rowcal from "./Rowcal";
+const Cart = ({cart,handleDelte,pCart}) => {
+console.log(cart)
+console.log(pCart)
+   
   return (
-    <div className="p-4 w-full flex-1">
+    <div className="p-4 w-full rounded-2xl border-2 ">
       <div className="overflow-x-auto">
-        <h1>Want to Cook : {cart.length}</h1>
+        <h1 className="lexend text-2xl font-semibold text-center p-2">Want to Cook : {cart.length}</h1>
+        <hr />
         <table className="table table-zebra">
           {/* head */}
           <thead>
             <tr>
-              <th>S.N</th>
+              <th className="hidden md:block lg:block">S.N</th>
               <th>Name</th>
               <th>Time</th>
               <th>Calories</th>
@@ -23,40 +27,33 @@ const Cart = ({ cart,handleDelte }) => {
           </tbody>
         </table>
       </div>
-      <div className="overflow-x-auto">
+      <div className=" overflow-x-auto">
+      <h1 className="lexend text-2xl font-semibold text-center p-2">Currently Cooking:{pCart.length}</h1>
+          <hr />
         <table className="table table-zebra w-full">
-          {/* head */}
           <thead>
-            <tr className="flex">
-              <th>S.N</th>
+            <tr>
+              <th className="hidden md:block lg:block">S.N</th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Time</th>
+              <th>Calories</th>
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
-            {/* row 2 */}
-            <tr>
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
-            </tr>
-            {/* row 3 */}
-            <tr>
-              <th>3</th>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
-            </tr>
+           {
+           pCart.map((items2,index)=><Rowcal items2={items2} index={index} key={index}></Rowcal>)
+           }
           </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td className="hidden md:block lg:block"></td>
+              <td><p>Total Time =<br /> 
+45 minutes</p></td>
+              <td>Total Calories = <br />
+1050 calories</td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>

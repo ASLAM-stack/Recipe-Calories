@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Recipe = ({recipe,hanleCart}) => {
-     
+       
     return (
-        <div class="card  w-full lg:w-96 bg-base-100 shadow-xl md:w-96 ">
-            <figure className='h-[300px] object-fill p-6'><img className='card-img rounded-2xl' src={recipe.recipe_image} alt="Shoes" /></figure>
+        <div class="card  w-full bg-base-100 shadow-xl border-2 ">
+            <figure className='h-[300px] object-cover p-6 '><img className='card-img rounded-xl ' src={recipe.recipe_image} alt="Shoes" /></figure>
             <div class="card-body">
                 <h2 class="card-title text-xl lexend font-semibold text-[#282828]">{recipe.recipe_name}</h2>
                 <p className='text-[#878787] text-base fira-sans-regular'>{recipe.short_description}</p>
