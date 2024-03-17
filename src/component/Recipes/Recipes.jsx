@@ -5,11 +5,11 @@ import { toast } from "react-toastify";
 const Recipes = ({recipes}) => {
     const [cart,setCart]= useState([]);
     const [pCart,setPCart] = useState([]);
- 
+    const validation = [...cart,...pCart]
     const hanleCart= (recipe2)=>{
          
          
-        const isExist = cart.find(item => item.recipe_id == recipe2.recipe_id)
+        const isExist = validation.find(item => item.recipe_id == recipe2.recipe_id)
         console.log(isExist)
         if (!isExist) {
             setCart([...cart,recipe2]);
@@ -25,7 +25,7 @@ const Recipes = ({recipes}) => {
         const newcart = cart.filter(items => items.recipe_id !== id.recipe_id)
         setCart(newcart)
         const calcul = cart.filter(items => items.recipe_id == id.recipe_id)
-        setPCart([...pCart,calcul])
+        setPCart([...pCart,...calcul])
          
          
     }

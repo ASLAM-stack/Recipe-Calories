@@ -1,9 +1,12 @@
 import Row from "./Row";
 import Rowcal from "./Rowcal";
 const Cart = ({cart,handleDelte,pCart}) => {
-console.log(cart)
+// console.log(cart)
 console.log(pCart)
-   
+
+   const totalTime =  pCart.reduce((a,b)=>a + parseInt(b.preparing_time.slice(0,3)),0)
+   const totalCalories =  pCart.reduce((a,b)=>a + parseInt(b.calories.slice(0,3)),0)
+console.log(totalTime)
   return (
     <div className="p-4 w-full rounded-2xl border-2 ">
       <div className="overflow-x-auto">
@@ -49,9 +52,9 @@ console.log(pCart)
               <td></td>
               <td className="hidden md:block lg:block"></td>
               <td><p>Total Time =<br /> 
-45 minutes</p></td>
+ {totalTime} minutes</p></td>
               <td>Total Calories = <br />
-1050 calories</td>
+{totalCalories} calories</td>
             </tr>
           </tfoot>
         </table>
