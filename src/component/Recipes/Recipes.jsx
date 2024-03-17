@@ -19,13 +19,14 @@ const Recipes = ({recipes}) => {
             toast.error('Already Added')
         }    
     }
-    
+ 
     const handleDelte = (id) =>{
          
         const newcart = cart.filter(items => items.recipe_id !== id.recipe_id)
         setCart(newcart)
         const calcul = cart.filter(items => items.recipe_id == id.recipe_id)
         setPCart([...pCart,calcul])
+         
          
     }
     

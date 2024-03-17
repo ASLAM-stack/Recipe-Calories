@@ -72,7 +72,7 @@ const Header = () => {
               <div class="form-control hidden md:block lg:block">
                 <input
                   type="text"
-                  placeholder="🔎Search"
+                  placeholder="🔍Search"
                   class="input input-bordered w-20 md:w-auto rounded-full"
                 />
               </div>
